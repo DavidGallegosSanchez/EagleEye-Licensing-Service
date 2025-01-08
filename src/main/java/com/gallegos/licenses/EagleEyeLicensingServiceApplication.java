@@ -1,4 +1,4 @@
-package com.gallegos.license_service;
+package com.gallegos.licenses;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
