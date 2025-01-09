@@ -1,1 +1,3 @@
-spring.application.name=EagleEye Licensing Service
+spring:
+  application:
+    name: licensingservice

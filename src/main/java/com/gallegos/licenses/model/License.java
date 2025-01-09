@@ -1,9 +1,6 @@
 package com.gallegos.licenses.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +17,18 @@ public class License {
     @Id
     @Column(name = "license_id", nullable = false)
     private String licenseId;
+
+    @Transient
+    private String organizationName ="";
+
+    @Transient
+    private String contactName ="";
+
+    @Transient
+    private String contactPhone ="";
+
+    @Transient
+    private String contactEmail ="";
 
     @Column(name = "organization_id", nullable = false)
     private String organizationId;
@@ -71,6 +80,26 @@ public class License {
 
     public License withComment(String comment){
         this.setComment(comment);
+        return this;
+    }
+
+    public License withOrganizationName(String organizationName){
+        this.setOrganizationName(organizationName);
+        return this;
+    }
+
+    public License withContactName(String contactName){
+        this.setContactName(contactName);
+        return this;
+    }
+
+    public License withContactPhone(String contactPhone){
+        this.setContactPhone(contactPhone);
+        return this;
+    }
+
+    public License withContactEmail(String contactEmail){
+        this.setContactEmail(contactEmail);
         return this;
     }
 }
